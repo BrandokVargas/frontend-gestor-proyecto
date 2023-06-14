@@ -11,7 +11,7 @@ const Login = () => {
     const [alerta,setAlerta] = useState({});
 
     const {setAuth} = useAuth()
-    //const navigate = useNavigate()
+    const navigate = useNavigate()
 
     
     const handleSubmit = async e => {
@@ -32,7 +32,7 @@ const Login = () => {
             localStorage.setItem('token',data.token)
             //Insertamos en el state global auth
             setAuth(data)
-            //navigate('/proyectos')
+            navigate('/proyectos')
         } catch (error) {
             setAlerta({
                 msg: error.response.data.msg,

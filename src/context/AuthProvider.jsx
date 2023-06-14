@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
 
     const [auth, setAuth] = useState({});
     const [cargando,setCargando] = useState(true);
-    console.log("a",auth._id)
+
     const navigate = useNavigate();
 
  
@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
             try {
                 const {data} = await clienteAxios('/usuarios/perfil',config)
                 setAuth(data)
-                navigate('/proyectos')
+                // navigate('/proyectos')
             } catch (error) {
                 setAuth({})
             } 
@@ -43,6 +43,9 @@ const AuthProvider = ({ children }) => {
         autenticarUser();
     },[])
 
+    const cerrarSesionAuth = () => {
+        setAuth({})
+    }
 
     return (
         <AuthContext.Provider
@@ -50,7 +53,8 @@ const AuthProvider = ({ children }) => {
                 //States globales
                 auth,
                 setAuth,
-                cargando
+                cargando,
+                cerrarSesionAuth
             }}
         >
             {children}
