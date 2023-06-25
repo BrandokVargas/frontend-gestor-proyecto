@@ -1,6 +1,7 @@
 import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 import { formatearFecha } from '../../helpers/formatearFecha';
 import Barra from '../grafico/Barra';
+import Logo from '../../assets/LogoOgily.png'
 
 
 const styles = StyleSheet.create({
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     viewTitle: {
-        padding: 20,
+        padding: 5,
         textAlign: "center",
         letterSpacing: 3,
         margin: 30
@@ -52,8 +53,15 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginTop: 10
     },
-
-
+    line: {
+        width: '100%',
+        height: 1,
+        backgroundColor: '#A23427',
+        marginTop: 4,
+    },
+    sistema: {
+        padding: "8px",
+    },
 });
 
 
@@ -83,20 +91,23 @@ const RTareas = ({ tareas,nombre}) => {
             <Page style={styles.body}>
 
                 <View style={styles.viewHeader}>
-                    <View>
-                        <Text>Logo del sistema</Text>
-                    </View>
+                    
+                    <Image src={Logo} style={{maxWidth: "70px",maxHeight: "70px"}}/>
+                    
 
-                    <View>
+                    <View style={styles.sistema}>
                         <Text>{nombre}</Text>
                     </View>
                 </View>
 
                 <View style={styles.viewTitle}>
                     <View>
-                        <Text>------------------------------------------</Text>
+                        
                         <Text>Informe de reportes</Text>
-                        <Text>------------------------------------------</Text>
+                        {/* <Text>------------------------------------------</Text> */}
+                        <View style={styles.line}>
+                            
+                        </View>
                     </View>
                 </View>
 

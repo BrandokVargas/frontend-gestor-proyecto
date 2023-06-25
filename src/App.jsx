@@ -13,8 +13,10 @@ import RevisarProyecto from "./paginas/RevisarProyecto"
 import EditarProyecto from "./paginas/EditarProyecto";
 import NuevoColaborador from "./paginas/NuevoColaborador";
 
+
 import { AuthProvider } from "./context/AuthProvider";
 import { ProyectosProvider } from "./context/ProyectosProvider";
+
 
 function App() {
 

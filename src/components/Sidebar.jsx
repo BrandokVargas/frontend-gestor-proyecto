@@ -17,7 +17,7 @@ const Sidebar = () => {
             >Nuevo Proyecto</Link>
 
             <div className='md:opacity-30 md:mt-40 lg:opacity-30 lg:mt-40'>
-                <img className='hidden md:block lg:blok' src="Logo.svg" alt="Logo Ogilvy" />
+                <img className='hidden md:block lg:blok' src="/loguin.svg" alt="Logo Ogilvy" />
             </div>
 
         </aside>

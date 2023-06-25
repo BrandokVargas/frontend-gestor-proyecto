@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom'
-import ModalReportes from "../components/ModalReportes";
+import { useParams, Link } from 'react-router-dom';
 import useProyectos from '../hooks/useProyectos';
 import EfectoPulse from '../components/EfectoPulse';
 import ModalFormTarea from '../components/ModalFormTarea';
@@ -164,7 +163,6 @@ const RevisarProyecto = () => {
             <ModalFormTarea />
             <ModalEliminarTarea />
             <ModalEliminarColaborador />
-            <ModalReportes />
         </>
     )
 }
