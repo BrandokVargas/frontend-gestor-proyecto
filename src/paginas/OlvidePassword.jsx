@@ -19,7 +19,7 @@ const OlvidePassword = () => {
         }
 
         try {
-            const { data } = await clienteAxios.post( `/usuarios/olvide-password`,{email})
+            const { data } = await clienteAxios.post(`/usuarios/olvide-password`, { email })
 
             setAlerta({
                 msg: data.msg,
@@ -39,37 +39,40 @@ const OlvidePassword = () => {
 
     return (
         <>
-            <h1 className="text-sky-600 font-black text-4xl text-center">Recupera tu contraseña
-            </h1>
+
 
             {msg && <Alerta alerta={alerta} />}
 
             <form
-                className="my-10 bg-white shadow rounded-lg p-10"
+                className="my-10 bg-white shadow-2xl rounded-lg p-10"
                 onSubmit={handleSubmit}
             >
 
-
+                <h1 className="text-black font-black text-4xl text-center">Recupera tu contraseña
+                </h1>
                 <div className="my-5">
-                    <label
-                        className="uppercase text-gray-600 block text-xl font-bold"
-                        htmlFor="email"
-                    >Correo electrónico</label>
-                    <input
-                        id="email"
-                        type="email"
-                        placeholder="Email de Registro"
-                        className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                    />
+                    <div className="relative mt-2 rounded shadow-sm">
+                        <input
+                            id="email"
+                            type="email"
+                            placeholder="Correo electrónico"
+                            className="w-full pl-10 py-2 pr-3 border border-black focus:outline-none rounded-full bg-gray-50"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                        <div className="absolute inset-y-0 left-0 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mx-3">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
 
 
                 <input
                     type="submit"
                     value="Recuperar Contraseña"
-                    className="bg-sky-700 mb-5 w-full py-3 text-white font-bold rounded hover:cursor-pointer hover:bg-sky-800 transition-colors"
+                    className="bg-black mb-5 w-full py-3 text-white font-bold rounded hover:cursor-pointer hover:bg-black transition-colors"
                 />
 
             </form>
@@ -79,12 +82,12 @@ const OlvidePassword = () => {
                 <Link
                     className='block text-center my-5 text-slate-500 text-sm'
                     to="/registrar"
-                >¿No tienes una cuenta? <span className="text-sky-600">Regístrate ahora</span></Link>
+                >¿No tienes una cuenta? <span className="text-black font-bold">Regístrate ahora</span></Link>
 
                 <Link
                     className='block text-center my-5 text-slate-500 text-sm'
-                    to="/"
-                >Tambien puedes <span className="text-sky-600">iniciar sesión</span></Link>
+                    to="/login"
+                >Tambien puedes <span className="text-black font-bold">iniciar sesión</span></Link>
 
             </nav>
 

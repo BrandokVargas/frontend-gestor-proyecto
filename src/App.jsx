@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "./layouts/Auth";
 import RutaProtegida from "./layouts/RutaProtegida";
 
+import Inicio from "./paginas/Inicio";
 import Login from "./paginas/Login";
 import Registrar from "./paginas/Registrar";
 import NuevoPassword from "./paginas/NuevoPassword";
@@ -18,6 +19,7 @@ import { AuthProvider } from "./context/AuthProvider";
 import { ProyectosProvider } from "./context/ProyectosProvider";
 
 
+
 function App() {
 
 
@@ -28,8 +30,12 @@ function App() {
         <ProyectosProvider>
           <Routes>
             {/* Area publica */}
-            <Route path="/" element={<Auth />}>
-              <Route index element={<Login />} />
+            <Route>
+              <Route index element={<Inicio />} />
+            </Route>
+
+            <Route path="/" element={<Auth />}>             
+              <Route path="login" element={<Login />} />
               <Route path="registrar" element={<Registrar />} />
               <Route path="olvide-password" element={<OlvidePassword />} />
               <Route path="olvide-password/:token" element={<NuevoPassword />} />

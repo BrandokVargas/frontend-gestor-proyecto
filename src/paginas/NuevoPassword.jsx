@@ -64,35 +64,39 @@ const NuevoPassword = () => {
 
     return (
         <>
-            <h1 className="text-sky-600 font-black text-4xl text-center">Reestablece tu contraseña
-            </h1>
+
 
             {msg && <Alerta alerta={alerta} />}
 
             {tokenValido && (
                 <form
-                    className="my-10 bg-white shadow rounded-lg p-10"
+                    className="my-10 bg-white shadow-2xl rounded-lg p-10"
                     onSubmit={handleSubmit}
                 >
-
+                    <h1 className="text-black font-black text-4xl text-center">Reestablece tu contraseña
+                    </h1>
                     <div className="my-5">
-                        <label
-                            className="uppercase text-gray-600 block text-xl font-bold"
-                            htmlFor="password"
-                        >Nuevo Password</label>
-                        <input
-                            id="password"
-                            type="password"
-                            placeholder="Escribe tu Nuevo Password"
-                            className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                        />
+                        <div className="relative mt-2 rounded shadow-sm">
+                            <input
+                                id="password"
+                                type="password"
+                                placeholder="Ingresa su nueva contraseña"
+                                className="w-full pl-10 py-2 pr-3 border border-black focus:outline-none rounded-full bg-gray-50"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                            <div className="absolute inset-y-0 left-0 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mx-3">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                </svg>
+                            </div>
+                        </div>
+                        
                     </div>
                     <input
                         type="submit"
                         value="Guardar contraseña"
-                        className="bg-sky-700 mb-5 w-full py-3 text-white uppercase font-bold rounded hover:cursor-pointer hover:bg-sky-800 transition-colors"
+                        className="bg-black mb-5 w-full py-3 text-white uppercase font-bold rounded hover:cursor-pointer hover:bg-sky-800 transition-colors"
                     />
 
                 </form>
@@ -100,8 +104,8 @@ const NuevoPassword = () => {
 
             {passwordModificado && (
                 <Link
-                    className='block text-center text-sky-600 my-5 text-slate-500 text-sm'
-                    to="/"
+                    className='block text-center text-black my-5 text-black text-sm'
+                    to="/login"
                 >Inicia Sesión</Link>
             )}
 
